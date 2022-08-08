@@ -16,14 +16,19 @@ function App() {
     setBgColor(bgColor === "lightblue" ? "lightgreen" : "lightblue");
   }
 
-  console.log("render");
+  const resetCounter = () => {
+    setCount(0);
+  };
+  
   return (
     <div className="App">
-      <h1 style={changeBGColor}>Counter</h1>
-      <button onClick={() => incrementCounter()}>increment</button>
-      <button onClick={() => decrementCounter()}>decrement</button>
+    <h1 style={{backgroundColor:bgColor}} onClick={changeBGColor}>Counter: {count}  </h1>
+    <button onClick={incrementCounter}>increment</button>
+    <button onClick={decrementCounter}>decrement</button>
+    <button onClick={resetCounter}>reset</button>
     </div>
   );
 }
+ 
 
 export default App;
